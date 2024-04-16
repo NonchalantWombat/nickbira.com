@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Nicholas Bira</title>
+    <!-- Add Bootstrap CSS for styling and responsiveness -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Cambria', serif;
+            color: #333;
+        }
+        .navbar {
+        background-color: #4bb3d0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+        .navbar-brand, .nav-link {
+            color: #333;
+        }
+        .nav-link {
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #007bff;
+        }
+        .about-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+        .profile-img {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .content {
+            padding: 0 15%;
+            color: #000000;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .bg {
+            background-image: url('');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            min-height: 100vh;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 80px;
+        }
+        .social-icons a {
+            margin: 0 20px;
+        }
+        .content-wrapper {
+            background-color: rgba(75, 179, 208, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .carousel-image {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(75, 179, 208, 0.8);
+            color: #fff;
+            font-size: 24px;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .carousel-arrow.prev {
+            left: 10px;
+        }
+
+        .carousel-arrow.next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body class="bg">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Nicholas Bira, PhD</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">PORTFOLIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">PERSONAL</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Page_CV.html">RESUME & CV</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="about-section">
+        <h2>Body of Work</h2>
+         <div class="carousel">
+        <img class="carousel-image" src="https://i.postimg.cc/Jz7Df7cK/Slide2.jpg" alt="Image 1">
+        <img class="carousel-image" src="https://i.postimg.cc/FK7fKP6L/Slide3.jpg" alt="Image 2">
+        <img class="carousel-image" src="https://i.postimg.cc/mrJP1Yx6/Slide4.jpg" alt="Image 3">
+        <img class="carousel-image" src="https://i.postimg.cc/9M9rdDCX/Slide5.jpg" alt="Image 4">
+        <img class="carousel-image" src="https://i.postimg.cc/Vk7rmyKw/Slide7.jpg" alt="Image 5">
+        <a class="carousel-arrow prev" href="#" onclick="changeImage(-1)">&#10094;</a>
+        <a class="carousel-arrow next" href="#" onclick="changeImage(1)">&#10095;</a>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.getElementsByClassName('carousel-image');
+
+        function showImage(index) {
+            images[currentImageIndex].style.display = 'none';
+            currentImageIndex = (index + images.length) % images.length;
+            images[currentImageIndex].style.display = 'block';
+        }
+
+        function changeImage(step) {
+            showImage(currentImageIndex + step);
+        }
+
+        showImage(currentImageIndex);
+    </script>
+    </div>
+
+    <div class="content">
+        <div class="content-wrapper">
+        <p>My name is Dr. Nicholas Bira, and I am a robotics researcher with a PhD in Robotics from Oregon State University. My past research has explored hardware methods for controlling compliant robotic mechanisms with smart materials, specifically via the use of magnetic fluids and electrompermanent magnets.</p>
+        <p>I am actively pursuing positions in the robotics industry at this time. I have experience in all phases of the research process, from writing successful grant applications, to managing teams of student researchers, to publishing and presenting work in top journals and in leading robotics conferences. I am driven to solve problems through collaboration and by developing new skills. I hope to leverage these experiences by contributing my leadership and expertise to the research and development of cutting edge robotics systems.</p>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/nicholasbira/"><img src="https://i.postimg.cc/gJ9VskzL/Linked-In-Logo.png" alt="LinkedIn" style="width:50px; height:50px;"></a>
+        <a href="https://www.instagram.com/nick_makes_stuff/"><img src="https://i.postimg.cc/pTnHKfRp/Instagram-Logo.png" alt="Instagram" style="width:50px; height:50px;"></a>
+    </div>
+
+    <!-- Add Bootstrap's JavaScript and required dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
